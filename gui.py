@@ -242,8 +242,8 @@ class LongTailLibGUI:
         # 2. 算法选择
         ttk.Label(frame, text="算法 (Algorithm):").grid(row=1, column=0, **grid_opts)
         self.tr_algo = tk.StringVar(value="CReFF")
-        algos = ["CReFF", "CLIP2FL", "CCVR", "RUCR", "FedETF", "FedLoGe", "FedNH", "FedIC", "FedGraB", "FedAvg",
-                 "FedProx"]
+        algos = ["CReFF", "CLIP2FL", "CCVR", "RUCR", "FedETF", "FedLoGe", "FedNH", "FedLC", "FedGraB", "FedAvg",
+                 "FedProx","FedIC"]
         ttk.Combobox(frame, textvariable=self.tr_algo, values=algos, state="readonly", width=15).grid(row=1, column=1,
                                                                                                       **grid_opts)
 
