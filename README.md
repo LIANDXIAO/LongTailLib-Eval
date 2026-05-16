@@ -62,7 +62,7 @@ cd backend
 pip install -r requirements.txt
 
 # 启动 FastAPI 服务端服务 (热重载模式, 默认暴露 8000 端口)
-uvicorn main:app --reload --port 8000
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 > 服务验证：启动后您可以在浏览器中访问 `http://localhost:8000/docs` 查看 Swagger UI 提供的接口交互文档。
 
