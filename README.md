@@ -4,7 +4,7 @@ LongTailLib-Eval 是一个专注于**联邦长尾学习（Federated Long-Tail Le
 
 近期项目经历了一次重大的架构重构，从原有的基于 Tkinter 的桌面客户端 GUI（`gui.py`）升级为了现代化的 **B/S (浏览器/服务器)** 架构。新架构采用了前后端分离的设计，大幅提升了交互体验、任务调度能力及数据可视化的效果。
 
-## ✨ 核心特性
+##  核心特性
 
 - **现代化的 UI 界面**：前端采用 Vue 3 + Element Plus 构建，提供响应式、体验优异的现代化操作界面。
 - **高性能 API 与任务调度**：后端基于 FastAPI 开发，通过子进程稳定管理长期运行的实验任务，提供标准的 RESTful API。
@@ -12,7 +12,7 @@ LongTailLib-Eval 是一个专注于**联邦长尾学习（Federated Long-Tail Le
 - **可视化数据分析**：内置了包括实验结果对比分析、长尾数据分布特征（长尾度）的多种图表展示。
 - **便捷的文件系统集成**：后端 API 打通系统层，前端可直观查看和使用本地 `dataset/` 模型数据集库以及 `results/` 评估产生的结果输出。
 
-## 📁 目录结构摘要
+##  目录结构摘要
 
 ```text
 LongTailLib-main/
@@ -29,7 +29,7 @@ LongTailLib-main/
 └── gui.py                    # Legacy：旧版 Tkinter 界面入口（已弃用/作历史参考）
 ```
 
-## 🚀 部署与运行指南
+##  部署与运行指南
 
 环境要求：
 - 系统：Windows / Linux / macOS
