@@ -1,10 +1,10 @@
 <template>
   <div class="page-card">
-    <h2 class="page-title">Dataset Generation</h2>
+    <h2 class="page-title">数据集生成</h2>
     <el-form :model="form" label-width="160px" class="dataset-form" v-loading="loading">
       <el-row :gutter="24">
         <el-col :span="12">
-          <el-form-item label="Target Dataset">
+          <el-form-item label="目标数据集（Target）">
             <el-select v-model="form.ds_name" placeholder="Select dataset" class="w-100">
               <el-option label="Cifar10" value="Cifar10" />
               <el-option label="Cifar100" value="Cifar100" />
@@ -13,7 +13,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="Distribution">
+          <el-form-item label="分布类型（Distribution）">
             <el-select v-model="form.ds_niid" class="w-100">
               <el-option label="non-i.i.d" value="noniid" />
               <el-option label="i.i.d" value="iid" />
@@ -24,7 +24,7 @@
 
       <el-row :gutter="24">
         <el-col :span="12">
-          <el-form-item label="Balance">
+          <el-form-item label="数据量平衡（Balance）">
             <el-select v-model="form.ds_balance" class="w-100">
               <el-option label="Unbalanced (-)" value="-" />
               <el-option label="Balanced" value="balance" />
@@ -32,7 +32,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="Partition">
+          <el-form-item label="划分策略（Partition）">
             <el-select v-model="form.ds_partition" class="w-100">
               <el-option label="Dirichlet (dir)" value="dir" />
               <el-option label="Pat" value="pat" />
@@ -43,12 +43,12 @@
       </el-row>
 
       <div class="section-divider">
-        <span class="divider-text">Long-tail Settings</span>
+        <span class="divider-text">长尾设置</span>
       </div>
 
       <el-row :gutter="24">
         <el-col :span="12">
-          <el-form-item label="Enable Longtail">
+          <el-form-item label="启动长尾">
             <el-switch
               v-model="form.ds_longtail"
               active-value="longtail"
@@ -59,7 +59,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="Longtail Type">
+          <el-form-item label="长尾类型">
             <el-select v-model="form.ds_type" :disabled="form.ds_longtail !== 'longtail'" class="w-100">
               <el-option label="Global" value="global" />
               <el-option label="Local" value="local" />
@@ -70,7 +70,7 @@
 
       <el-row :gutter="24">
         <el-col :span="8">
-          <el-form-item label="Imbalance Factor (IF)">
+          <el-form-item label="不平衡因子(IF)">
             <el-input v-model="form.ds_if" :disabled="form.ds_longtail !== 'longtail'" />
           </el-form-item>
         </el-col>
@@ -80,7 +80,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="8">
-          <el-form-item label="Num Clients">
+          <el-form-item label="客户端数量">
             <el-input v-model="form.ds_clients" />
           </el-form-item>
         </el-col>
@@ -89,9 +89,8 @@
       <div class="submit-action">
         <el-button type="primary" size="large" @click="onSubmit" class="action-btn">
           <el-icon class="el-icon--left"><Cpu /></el-icon>
-          Generate Dataset
+          生成数据集
         </el-button>
-        <p class="hint-text">Note: Ensure raw data is available before generating datasets.</p>
       </div>
     </el-form>
   </div>
@@ -120,7 +119,7 @@ const onSubmit = async () => {
   try {
     loading.value = true
     const res = await generateDataset(form)
-    ElMessage.success('Generate command submitted successfully.')
+    ElMessage.success('生成命令提交成功.')
   } catch (error) {
     //
   } finally {

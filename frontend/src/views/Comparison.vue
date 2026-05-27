@@ -1,25 +1,25 @@
 <template>
   <div class="page-card">
-    <h2 class="page-title">Experiment Results Comparison</h2>
+    <h2 class="page-title">选择要对比的数据集实验</h2>
     <el-form :model="form" class="comparison-form" v-loading="loading">
       
       <el-row :gutter="24" class="align-center">
         <el-col :span="16">
-          <el-form-item label="Select Experiment Group" label-width="180px">
-            <el-select v-model="form.dataset" placeholder="Select dataset group to compare" class="w-100">
+          <el-form-item label="选择实验" label-width="180px">
+            <el-select v-model="form.dataset" placeholder="选择数据集进行比较" class="w-100">
               <el-option v-for="ds in datasets" :key="ds" :label="ds" :value="ds" />
             </el-select>
           </el-form-item>
         </el-col>
         <el-col :span="8">
-          <el-button @click="fetchDatasets" :icon="Refresh">Refresh List</el-button>
+          <el-button @click="fetchDatasets" :icon="Refresh">刷新列表</el-button>
         </el-col>
       </el-row>
 
       <div class="submit-action">
         <el-button type="primary" size="large" @click="onSubmit" class="action-btn">
           <el-icon class="el-icon--left"><DataAnalysis /></el-icon>
-          Generate Comparison Plot
+          生成并查看对比图
         </el-button>
       </div>
 

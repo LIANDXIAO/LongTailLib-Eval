@@ -3,12 +3,12 @@
     <el-header class="header">
       <div class="logo">
         <el-icon :size="24" color="#409eff"><DataLine /></el-icon>
-        <span>LongTailLib Platform</span>
+        <span>联邦长尾学习系统工作台</span>
       </div>
       <el-menu mode="horizontal" :default-active="$route.path" router class="nav-menu" :ellipsis="false">
-        <el-menu-item index="/dataset">Dataset</el-menu-item>
-        <el-menu-item index="/training">Training</el-menu-item>
-        <el-menu-item index="/comparison">Comparison</el-menu-item>
+        <el-menu-item index="/dataset">数据集</el-menu-item>
+        <el-menu-item index="/training">算法训练</el-menu-item>
+        <el-menu-item index="/comparison">结果对比</el-menu-item>
       </el-menu>
     </el-header>
 

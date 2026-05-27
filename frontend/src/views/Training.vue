@@ -5,27 +5,27 @@
       
       <el-row :gutter="24">
         <el-col :span="18">
-          <el-form-item label="Select Dataset">
-            <el-select v-model="form.dataset" placeholder="Select from generated datasets" class="w-100">
+          <el-form-item label="选择数据集（Dataset）">
+            <el-select v-model="form.dataset" placeholder="选择生成的数据集" class="w-100">
               <el-option v-for="ds in datasets" :key="ds" :label="ds" :value="ds" />
             </el-select>
           </el-form-item>
         </el-col>
         <el-col :span="6">
-          <el-button @click="fetchDatasets" :icon="Refresh" class="w-100">Refresh List</el-button>
+          <el-button @click="fetchDatasets" :icon="Refresh" class="w-100">刷新列表</el-button>
         </el-col>
       </el-row>
 
       <el-row :gutter="24">
         <el-col :span="12">
-          <el-form-item label="Algorithm">
+          <el-form-item label="算法（Algorithm）">
             <el-select v-model="form.algo" class="w-100">
               <el-option v-for="a in algos" :key="a" :label="a" :value="a" />
             </el-select>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="Model">
+          <el-form-item label="模型（Model）">
             <el-select v-model="form.model" class="w-100">
               <el-option v-for="m in models" :key="m" :label="m" :value="m" />
             </el-select>
@@ -35,17 +35,17 @@
 
       <el-row :gutter="24">
         <el-col :span="8">
-          <el-form-item label="Global Rounds">
+          <el-form-item label="全局轮数（Global Rounds）">
             <el-input v-model="form.gr" />
           </el-form-item>
         </el-col>
         <el-col :span="8">
-          <el-form-item label="GPU ID (-did)">
+          <el-form-item label="GPU ID ">
             <el-input v-model="form.did" />
           </el-form-item>
         </el-col>
         <el-col :span="8">
-          <el-form-item label="Random Seed">
+          <el-form-item label="随机种子（Random Seed）">
             <el-input v-model="form.seed" />
           </el-form-item>
         </el-col>
@@ -54,9 +54,8 @@
       <div class="submit-action">
         <el-button type="success" size="large" @click="onSubmit" class="action-btn">
           <el-icon class="el-icon--left"><VideoPlay /></el-icon>
-          Start Training
+          开始训练
         </el-button>
-        <p class="hint-text">Tip: Seed > 0 guarantees reproducibility, 0 uses random seed</p>
       </div>
 
     </el-form>
